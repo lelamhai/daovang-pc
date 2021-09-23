@@ -107,13 +107,17 @@
           <div class="loader"></div>
       </div>
   </div>
+
+  <input type="text" id="keyboard">
     <canvas id="unity-canvas" style="width: 1280px; height: 720px; background: #231F20"></canvas>
-    <script src="Build/Temp.loader.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="main.js"></script>
+    <script src="Build/Game.loader.js"></script>
     <script>
       createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/Temp.data",
-        frameworkUrl: "Build/Temp.framework.js",
-        codeUrl: "Build/Temp.wasm",
+        dataUrl: "Build/Game.data",
+        frameworkUrl: "Build/Game.framework.js",
+        codeUrl: "Build/Game.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Qusdrok",
         productName: "Treasure Hunter",
@@ -122,14 +126,22 @@
       .then((instance) =>
       {
         unityInstance = instance;
+        $('#keyboard').on('input',function(e){
+          var text = $(this).val();
+          unityInstance.SendMessage('MainScene', 'ReviceText', text);
+        });
       })
       .catch((message) => { console.warn(message); });
     </script>
 
     <script>
-       function StopLoading() {
+      function ShowKeyboard()
+      {
+         $("#keyboard").select();
+      }
+      function StopLoading() {
             document.getElementById("loading").remove();
-        }
+      }
     </script>
   </body>
 </html>
