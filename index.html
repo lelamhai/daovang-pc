@@ -109,7 +109,7 @@
         </div>
     </div>
   
-    <input type="text" id="keyboard">
+    <!-- <input type="text" id="keyboard"> -->
     <canvas id="unity-canvas" style="width: 1280px; height: 720px; background: #231F20"></canvas>
     <script src="jquery-3.6.0.min.js"></script>
     <script src="main.js"></script>
@@ -127,17 +127,18 @@
       .then((instance) =>
       {
         unityInstance = instance;
-		$('#keyboard').on('input',function(e){
-          var text = $(this).val();
-          unityInstance.SendMessage('MainScene', 'ReviceText', text);
-        });
+		<!-- $('#keyboard').on('input',function(e){ -->
+          <!-- var text = $(this).val(); -->
+          <!-- unityInstance.SendMessage('MainScene', 'ReviceText', text); -->
+        <!-- }); -->
       })
       .catch((message) => { console.warn(message); });
     </script>
      <script>
       function ShowKeyboard()
       {
-         $("#keyboard").select();
+         <!-- $("#keyboard").select(); -->
+		 console.log("Select input text");
       }
       function StopLoading() {
             document.getElementById("loading").remove();
