@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Treasure Hunter</title>
     <script src="./polyfills.js"></script>
-    <style>
+	<style>
       .loader {
           animation: rotate 1s infinite;
           height: 50px;
@@ -103,15 +103,13 @@
   </head>
   <body style="text-align: center">
     <body style="text-align: center">
-      <div id="loading">
-        <div class="load_wrap">
-            <div class="loader"></div>
-        </div>
-    </div>
-  
-    <!-- <input type="text" id="keyboard"> -->
+    <div id="loading">
+      <div class="load_wrap">
+          <div class="loader"></div>
+      </div>
+  </div>
     <canvas id="unity-canvas" style="width: 1280px; height: 720px; background: #231F20"></canvas>
-    <script src="jquery-3.6.0.min.js"></script>
+	<script src="jquery-3.6.0.min.js"></script>
     <script src="main.js"></script>
     <script src="Build/treasure-hunter-pc.loader.js"></script>
     <script>
@@ -127,18 +125,13 @@
       .then((instance) =>
       {
         unityInstance = instance;
-		<!-- $('#keyboard').on('input',function(e){ -->
-          <!-- var text = $(this).val(); -->
-          <!-- unityInstance.SendMessage('MainScene', 'ReviceText', text); -->
-        <!-- }); -->
       })
       .catch((message) => { console.warn(message); });
     </script>
-     <script>
+	 <script>
       function ShowKeyboard()
       {
-         <!-- $("#keyboard").select(); -->
-		 console.log("Select input text");
+         console.log("selct");
       }
       function StopLoading() {
             document.getElementById("loading").remove();
