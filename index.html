@@ -134,7 +134,10 @@
          console.log("selct");
       }
       function StopLoading() {
+	      if (document.getElementById("loading")!=null)
+	      {
             document.getElementById("loading").remove();
+	      }
       }
     </script>
   </body>
